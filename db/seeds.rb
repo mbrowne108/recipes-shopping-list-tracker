@@ -15,19 +15,17 @@ flour = Ingredient.create(name: 'Flour', amount: 5, measurement: 'lb(s)')
 butter = Ingredient.create(name: 'Butter', amount: 0, measurement: 'stick(s)')
 sugar = Ingredient.create(name: 'Sugar', amount: 1, measurement: 'lb(s)')
 
-cake = Recipe.new(name: 'Pound Cake', instructions: '1. Mix wet ingredients 2. Mix dry ingredients 3. Mix wet ingredients into dry ingredients 4. Bake at 350F for 35 minutes')
-cake.recipe_ingredients.new(ingredient: eggs)
-cake.recipe_ingredients.new(ingredient: flour)
-cake.recipe_ingredients.new(ingredient: butter)
-cake.recipe_ingredients.new(ingredient: sugar)
-cake.save
+cake = Recipe.create(name: 'Pound Cake', instructions: '1. Mix wet ingredients 2. Mix dry ingredients 3. Mix wet ingredients into dry ingredients 4. Bake at 350F for 35 minutes')
+cake.ingredients << eggs
+cake.ingredients << flour
+cake.ingredients << butter
+cake.ingredients << sugar
 
-pasta = Recipe.new(name: 'Spaghetti and Meatballs', instructions: '1. Cook meatballs with onions 2. Add pasta sauce 3. Cook pastas 4. Add cooked sauce to cooked pasta')
-pasta.recipe_ingredients.new(ingredient: spaghetti)
-pasta.recipe_ingredients.new(ingredient: meatballs)
-pasta.recipe_ingredients.new(ingredient: sauce)
-pasta.recipe_ingredients.new(ingredient: onions)
-pasta.save
+pasta = Recipe.create(name: 'Spaghetti and Meatballs', instructions: '1. Cook meatballs with onions 2. Add pasta sauce 3. Cook pastas 4. Add cooked sauce to cooked pasta')
+pasta.ingredients << spaghetti
+pasta.ingredients << meatballs
+pasta.ingredients << sauce
+pasta.ingredients << onions
 
 omelette = Recipe.create(name: 'Omelette', instructions: '1. Heat butter in pan 2. Cook onions in butter 3. Add whipped eggs 4. Flip omelette')
 omelette.ingredients << eggs

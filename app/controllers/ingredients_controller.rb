@@ -1,4 +1,5 @@
 class IngredientsController < ApplicationController
-    has_many :recipe_ingredients
-    has_many :recipes, through: :recipe_ingredients
+    def index
+        render json: Ingredient.all, status: 200
+    end
 end
