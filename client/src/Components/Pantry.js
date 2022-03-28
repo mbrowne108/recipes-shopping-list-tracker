@@ -1,9 +1,14 @@
 import React from 'react';
 
-function Pantry() {
+function Pantry({ ingredients }) {
   return (
     <div>
-      <h4>Pantry</h4>
+      <h3>Pantry</h3>
+        <ul>
+          {ingredients.map((ingredient) => {
+            return <li key={ingredient.id}>{ingredient.name}</li>
+          })}
+        </ul>
     </div>
   );
 }
