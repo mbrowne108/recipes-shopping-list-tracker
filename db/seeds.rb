@@ -1,5 +1,6 @@
-Ingredient.destory_all
-Recipe.destory_all
+RecipeIngredient.delete_all
+Ingredient.delete_all
+Recipe.delete_all
 
 puts "Seeding ingredients..."
 spaghetti = Ingredient.create(name: 'Spaghetti', amount: 5, measurement: 'lb(s)')
